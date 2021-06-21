@@ -1,8 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% set active_page = "index" -%}
+
+{% block body %}
 <head>
     <meta charset="UTF-8">
     <title>About me</title>
 </head>
 <body><h1>O mnie</h1>
 <p style="font-size:20px;">To jest pierwsza wersja strony o mnie :)</p></body>
+
+{% endblock %}
