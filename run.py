@@ -22,7 +22,7 @@ def gallery():
 
 @app.route("/contact")
 def contact():
-    return render_template("gallery.html")
+    return render_template("contact.html")
 
 
 @app.route('/user/<username>', methods=['GET', 'POST'])
