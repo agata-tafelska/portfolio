@@ -20,17 +20,12 @@ def gallery():
     return render_template("gallery.html")
 
 
-@app.route("/contact")
+@app.route("/contact", methods=['GET', 'POST'])
 def contact():
-    return render_template("contact.html")
-
-
-@app.route('/user/<username>', methods=['GET', 'POST'])
-def show_user_profile(username):
     if request.method == 'POST':
-        return 'HTTP POST for user %s with password %s' % (username, request.form['password'])
+        return render_template("contact_success.html", email=request.form['email'])
     else:
-        return 'HTTP GET for user %s' % username
+        return render_template("contact.html")
 
 
 @app.errorhandler(404)
