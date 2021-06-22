@@ -1,8 +1,14 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+import os
 
 app = Flask(__name__)
+
+
+@app.route("/testenv")
+def testenv():
+    return os.getenv('testenv', "Key doesn't exist")
 
 
 @app.route("/")
