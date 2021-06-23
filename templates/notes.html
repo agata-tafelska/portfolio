@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+{% for resultin data %}<p>{{result.name }} napisał{{result.text}} </p>
+{% else %}<p>Brak wpisów </p>
+{% endfor %}
+{% endblock %}

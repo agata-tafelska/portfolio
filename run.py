@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from AzureDB import AzureDB
 
 app = Flask(__name__)
 
@@ -26,6 +27,22 @@ def contact():
         return render_template("contact_success.html", email=request.form['email'])
     else:
         return render_template("contact.html")
+
+
+@app.route("/guests", methods=['GET', 'POST'])
+def guests():
+    if request.method == 'POST':
+        database = AzureDB()
+        database.insert_note(name=request.form['name'], text=request.form['text'])
+        notes = database.get_notes()
+
+        # TODO Prepare template for notes
+        response_notes = ""
+        for note in notes:
+            response_notes += "Name: " + note['name'] + ", text: " + note['text'] + "; "
+        return response_notes
+    else:
+        return render_template("guests.html")
 
 
 @app.errorhandler(404)
