@@ -35,12 +35,9 @@ def guests():
         database = AzureDB()
         database.insert_note(name=request.form['name'], text=request.form['text'])
         notes = database.get_notes()
-
-        # TODO Prepare template for notes
-        response_notes = ""
         for note in notes:
-            response_notes += "Name: " + note['name'] + ", text: " + note['text'] + "; "
-        return response_notes
+            print("%s wrote :\"%s\"" % (note['name'], note['text']))
+        return render_template("guests.html")
     else:
         return render_template("guests.html")
 
