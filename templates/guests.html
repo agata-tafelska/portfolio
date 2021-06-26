@@ -14,10 +14,13 @@
     <!--Section description-->
     <p class="text-center w-responsive mx-auto mb-5">Leave a note if you like the website</p>
 
-    {% for note in notes %}
-    <p>{{note[0] }} wrote: {{note[1]}} </p>
-    {% else %}<p>No entries</p>{% endfor %}
-
+    <ul class="list-group">
+        {% for note in notes %}
+        <li class="list-group-item">{{note[0] }} wrote: {{note[1]}}</li>
+        {% else %}
+        <li class="list-group-item">No entries so far.</li>
+        {% endfor %}
+    </ul>
     <div class="row">
 
         <!--Grid column-->
