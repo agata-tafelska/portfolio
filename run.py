@@ -39,7 +39,9 @@ def guests():
             print("%s wrote :\"%s\"" % (note['name'], note['text']))
         return render_template("guests.html")
     else:
-        return render_template("guests.html")
+        database = AzureDB()
+        notes = notes = database.get_notes()
+        return render_template("guests.html", notes=notes)
 
 
 @app.errorhandler(404)

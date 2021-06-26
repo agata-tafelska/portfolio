@@ -14,6 +14,10 @@
     <!--Section description-->
     <p class="text-center w-responsive mx-auto mb-5">Leave a note if you like the website</p>
 
+    {% for note in notes %}
+    <p>{{note.name }} wrote: {{note.text}} </p>
+    {% else %}<p>No entries</p>{% endfor %}
+
     <div class="row">
 
         <!--Grid column-->
@@ -49,7 +53,6 @@
             </div>
             <div class="status"></div>
         </div>
-        <!--Grid column-->
     </div>
 
 </section>
