@@ -3,12 +3,151 @@
 {% set active_page = "index" -%}
 
 {% block body %}
-<head>
-    <meta charset="UTF-8">
-    <title>Gallery</title>
-</head>
-<body>
+<main>
+    <div class="album bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/4.jpg" style="width:100%" onclick="openModal();currentSlide(4)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/5.jpg" style="width:100%" onclick="openModal();currentSlide(5)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/6.jpg" style="width:100%" onclick="openModal();currentSlide(6)">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/7.jpg" style="width:100%" onclick="openModal();currentSlide(7)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/8.jpg" style="width:100%" onclick="openModal();currentSlide(8)">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="/static/images/9.jpg" style="width:100%" onclick="openModal();currentSlide(9)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body>
+    <div id="myModal" class="modal">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <div class="modal-content">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" onclick="plusSlides(-1)">Previous</a></li>
+                            <li class="page-item"><a class="page-link" onclick="plusSlides(1)">Next</a></li>
+                            <li class="page-item"><a class="page-link" onclick="closeModal()">Close</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mySlides">
+                        <img src="/static/images/1.jpg" style="width:100%">
+                    </div>
 
+                    <div class="mySlides">
+                        <img src="/static/images/2.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/3.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/4.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/5.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/6.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/7.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/8.jpg" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <img src="/static/images/9.jpg" style="width:100%">
+                    </div>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
+</main>
 {% endblock %}
