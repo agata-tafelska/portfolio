@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Contact{% endblock %}
-{% set active_page = "contact" -%}
+{% block title %}Księga gości{% endblock %}
+{% set active_page = "guests" -%}
 
 {% block body %}
 
@@ -12,15 +12,15 @@
     <div class="div-padding">
 
         <!--Section heading-->
-        <h2 class="h1-responsive font-weight-bold text-center my-4">Guests</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-4">Księga gości</h2>
         <!--Section description-->
-        <p class="text-center w-responsive mx-auto mb-5">Leave a note if you like the website</p>
+        <p class="text-center w-responsive mx-auto mb-5">Zostaw po sobie komentarz jeśli spodobała Ci się stronka :)</p>
 
         <ul class="list-group">
             {% for note in notes %}
-            <li class="list-group-item">{{note[0] }} wrote: {{note[1]}}</li>
+            <li class="list-group-item">{{note[0] }} napisał/a: {{note[1]}}</li>
             {% else %}
-            <li class="list-group-item">No entries so far.</li>
+            <li class="list-group-item">Brak wpisów.</li>
             {% endfor %}
         </ul>
         <div class="row">
