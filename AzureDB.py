@@ -5,7 +5,7 @@ import azurecred
 class AzureDB:
     dsn = 'DRIVER=' + azurecred.AZDBDRIVER + \
           ';SERVER=' + azurecred.AZDBSERVER + \
-          ';PORT=1433' \
+          ';PORT=' + azurecred.AZDBPORT + \
           ';DATABASE=' + azurecred.AZDBNAME + \
           ';UID=' + azurecred.AZDBUSER + \
           ';PWD=' + azurecred.AZDBPW
