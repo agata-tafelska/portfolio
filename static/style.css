@@ -7,3 +7,19 @@ vertical-align: baseline;
 text-decoration: none;
 outline: 0;
 }
+
+.div-1 {
+  background-color: #d9ffcc;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.div-2 {
+  background-color: #ffcccc;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.img-avatar {
+  border-radius: 50%;
+}

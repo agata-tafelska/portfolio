@@ -1,13 +1,30 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
+{% block title %}About me{% endblock %}
 {% set active_page = "index" -%}
 
 {% block body %}
 <head>
-    <meta charset="UTF-8">
     <title>About me</title>
+    <meta charset="utf-8">
 </head>
-<body><h1>O mnie</h1>
-<p style="font-size:20px;">To jest pierwsza wersja strony o mnie :)</p></body>
+<body>
+<div>
+    <div class="div-1 text-center">
+        <h3>Kim jestem?</h3>
+        <p></p>
+        <p></p>
+        <img src="/static/images/portfolio-avatar.jpg" class="img-avatar" alt="Bird" width="350" height="350">
+        <p></p>
+        <p></p>
+        <p>Cześć, jestem Agata, jestem programistką aplikacji mobilnych na Adroida, a w wolnym czasie pasjonatką gotowania i zdrowego żywienia.</p>
+    </div>
+
+    <div class="div-2 text-center">
+        <h3>Moja aplikacja</h3>
+        <p>Obie pasje łączę pracując obecnie nad społecznościową aplikacją mobiną łączącą ludzi, którzy chcą jeść i żyć zdrowo! :)</p>
+    </div>
+</div>
+
+</body>
 
 {% endblock %}
