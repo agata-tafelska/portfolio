@@ -23,3 +23,21 @@ outline: 0;
 .img-avatar {
   border-radius: 50%;
 }
+
+.div-padding {
+    padding-left: 30px
+}
+
+.button {
+  background-color: #d9ffcc; /* Green */
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 4px;
+}
