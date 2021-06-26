@@ -40,7 +40,7 @@ def guests():
         return render_template("guests.html")
     else:
         database = AzureDB()
-        notes = notes = database.get_notes()
+        notes = database.get_notes()
         return render_template("guests.html", notes=notes)
 
 
